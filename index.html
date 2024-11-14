@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern QR Code Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+</head>
+<body class="light-theme">
+    <div class="theme-toggle">
+        <button id="theme-switch">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <div class="qr-generator">
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="text-input">
+                        <i class="fas fa-keyboard"></i> Enter Text or URL
+                    </label>
+                    <input type="text" id="text-input" placeholder="Enter text or URL for QR code">
+                </div>
+                
+                <div class="color-controls">
+                    <div class="form-group">
+                        <label for="qr-color">
+                            <i class="fas fa-fill-drip"></i> QR Code Color
+                        </label>
+                        <input type="color" id="qr-color" value="#000000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bg-color">
+                            <i class="fas fa-fill"></i> Background Color
+                        </label>
+                        <input type="color" id="bg-color" value="#ffffff">
+                    </div>
+                </div>
+
+                <div class="style-controls">
+                    <div class="form-group">
+                        <label for="qr-style">
+                            <i class="fas fa-shapes"></i> QR Style
+                        </label>
+                        <select id="qr-style">
+                            <option value="squares">Squares</option>
+                            <option value="dots">Dots</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="corner-style">
+                            <i class="fas fa-border-style"></i> Corner Style
+                        </label>
+                        <select id="corner-style">
+                            <option value="square">Square</option>
+                            <option value="rounded">Rounded</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="size-slider">
+                        <i class="fas fa-expand"></i> Size
+                    </label>
+                    <div class="size-control">
+                        <input type="range" id="size-slider" min="200" max="400" value="300">
+                        <span id="size-value">300 x 300</span>
+                    </div>
+                </div>
+
+                <div class="form-group logo-upload">
+                    <label for="logo-input" class="logo-label">
+                        <i class="fas fa-image"></i>
+                        <span>Upload Logo</span>
+                        <small>(Optional)</small>
+                    </label>
+                    <input type="file" id="logo-input" accept="image/*">
+                </div>
+
+                <button id="generate-btn" class="primary-btn">
+                    <i class="fas fa-qrcode"></i> Generate QR Code
+                </button>
+            </div>
+
+            <div class="qr-output">
+                <div id="qr-code"></div>
+                <button id="download-btn" class="secondary-btn">
+                    <i class="fas fa-download"></i> Download QR Code
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
